@@ -25,7 +25,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .navbar .navbar-collapse li :hover {
-    background-color: whitesmoke;
+    background-color: darkgray;
+    border-radius: 5px;
+    color: white;
 }
 
 a.nav-link {
