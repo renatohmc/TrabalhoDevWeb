@@ -1,74 +1,96 @@
-<!-- fazer uma pagina de cadastro seguindo o padrao das outras paginas-->
-
 <!DOCTYPE html>
-
-<!-- Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- -->
-<!-- Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
-    -->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BankBank</title>
-        <link rel="stylesheet" href="bootstrap/bootstrap-icons.css">
-        <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-success navbar-dark">
-            <div class="container-fluid sem-padding">
-                <div class="padding-navbar">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/icons/bank2.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                        <span style="font-size: 25px">BankBank</span>
-                    </a>
-                </div>
-                <div class="padding-navbar">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse mt-2" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gerenciar conta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Logout</a>
-                        </li>
-                    </ul>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankBank</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+        <div class="container-fluid sem-padding">
+            <div class="padding-navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/icons/bank2.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <span style="font-size: 25px">BankBank</span>
+                </a>
             </div>
-        </nav>
-        <div class="container full-height home">
-            <h1>Seja bem vindo usuário</h1>
-            <h3>O que deseja fazer?</h3>
-            <div class="row">
-                <div class="justify-content-center">
-                    <button type="button" class="btn btn-success" href="saque.html" onclick="window.location.href='saque.html'">Saque</button>
-                    <button type="button" class="btn btn-success" href="deposito.html" onclick="window.location.href='deposito.html'">Depósito</button>
-                    <button type="button" class="btn btn-success" href="transferencia.html" onclick="window.location.href='transferencia.html'">Transferência</button>
-                    <button type="button" class="btn btn-success" href="extrato.html" onclick="window.location.href='extrato.html'">Extrato</button>
-                    <button type="button" class="btn btn-success" href="investimento.html" onclick="window.location.href='emprestimo.html'">Empréstimo</button>
-                </div>
+            <div class="padding-navbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-
+            <div class="collapse navbar-collapse mt-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gerenciar conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-
-        <footer style="background-color: rgba(92, 184, 92, 1); color: rgb(255, 255, 255); padding: 10px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>BankBank - Todos os direitos reservados</p>
+    </nav>
+    <div class="container home">
+        <h1>Seja bem-vindo usuário</h1>
+        <h3>O que deseja fazer?</h3>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-cash-stack" style="font-size: 3rem;"></i>
+                        <a href="saque.html" class="btn btn-success">Saque</a>
                     </div>
                 </div>
             </div>
-        </footer>
-
-
-        <!-- Scripts -->
-        <script src="bootstrap/bootstrap.bundle.min.js"></script>
-
-    </body>
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-cash" style="font-size: 3rem;"></i>
+                        <a href="deposito.html" class="btn btn-success">Depósito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-arrow-right-circle" style="font-size: 3rem;"></i>
+                        <a href="transferencia.html" class="btn btn-success">Transferência</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-receipt" style="font-size: 3rem;"></i>
+                        <a href="extrato.html" class="btn btn-success">Extrato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-cash-coin" style="font-size: 3rem;"></i>
+                        <a href="emprestimo.html" class="btn btn-success">Empréstimo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color: rgba(92, 184, 92, 1); color: rgb(255, 255, 255); padding: 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>BankBank - Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

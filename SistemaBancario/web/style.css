@@ -7,6 +7,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : renato
 */
 
+html, body {
+    height: 100%;
+}
+
 .sem-padding{
     padding-left: 0px;
     padding-right: 0px;
@@ -38,7 +42,46 @@ a.nav-link {
     height: calc(100vh - 53.5px);
 }
 
-.home{
+.home {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Estilo para as "cards" com ícones */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
     text-align: center;
-    padding: 35vh 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+/* Estilo para os botões nas "cards" */
+.card a.btn {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: rgba(92, 184, 92, 1);
+    color: #fff;
+    text-align: center;
+    margin-top: 20px; /* Espaçamento superior para evitar sobreposição */
+    padding: 10px;
+}
+
+.navbar .nav-item a.nav-link:last-child:hover {
+    background-color: #4cae4c; /* Cor verde mais escura */
+    color: #fff;
 }
