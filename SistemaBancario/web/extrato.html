@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Extrato Bancário</title>
+</head>
+<body onload="aplicarFiltros()">
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+        <div class="container-fluid sem-padding">
+            <div class="padding-navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/icons/bank2.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <span style="font-size: 25px">BankBank</span>
+                </a>
+            </div>
+            <div class="padding-navbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse mt-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="boasvindas.html">Menu Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Extrato Bancário
+                    </div>
+                    <div class="card-body">
+                        <!-- Formulário de Filtros -->
+                        <form id="filtroForm">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="dataFiltro" class="form-label">Filtrar por Data:</label>
+                                    <input type="date" class="form-control" id="dataFiltro">
+                                </div>
+                                <div class="col">
+                                    <label for="valorFiltro" class="form-label">Filtrar por Valor:</label>
+                                    <input type="number" class="form-control" id="valorFiltro" placeholder="Digite o valor">
+                                </div>
+                                <div class="col">
+                                    <label for="tipoFiltro" class="form-label">Filtrar por Tipo:</label>
+                                    <select class="form-select" id="tipoFiltro">
+                                        <option value="">Todos</option>
+                                        <option value="Depósito">Depósito</option>
+                                        <option value="Saque">Saque</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="aplicarFiltros()">Aplicar Filtros</button>
+                        </form>
+
+                        <!-- Tabela de Extrato -->
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Operação</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaExtrato">
+                                <!-- Conteúdo da tabela é gerado dinamicamente com JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ... Seu código do corpo ... -->
+
+<script>
+    function aplicarFiltros() {
+        // Recupera os valores dos filtros
+        var dataFiltro = document.getElementById('dataFiltro').value;
+        var valorFiltro = document.getElementById('valorFiltro').value;
+        var tipoFiltro = document.getElementById('tipoFiltro').value;
+
+        // Lógica para filtrar os dados (exemplo: dados fictícios)
+        var dadosFiltrados = filtrarDados(dataFiltro, valorFiltro, tipoFiltro);
+
+        // Atualiza a tabela com os dados filtrados
+        atualizarTabela(dadosFiltrados);
+    }
+
+    function filtrarDados(dataFiltro, valorFiltro, tipoFiltro) {
+        // Lógica para filtrar dados (exemplo: dados fictícios)
+        var dados = [
+            { data: '01/01/2023', operacao: 'Depósito', valor: '500.00' },
+            { data: '02/01/2023', operacao: 'Saque', valor: '200.00' },
+            // Adicione mais dados conforme necessário
+        ];
+
+        // Se todos os filtros estiverem vazios, retorna todos os dados
+        if (!dataFiltro && !valorFiltro && !tipoFiltro) {
+            return dados;
+        }
+
+        // Filtra os dados com base nos critérios de filtro
+        var dadosFiltrados = dados.filter(function (item) {
+            // Filtra por data
+            var filtroData = !dataFiltro || item.data === dataFiltro;
+
+            // Filtra por valor (considerando que o valor é numérico)
+            var filtroValor = isNaN(valorFiltro) || parseFloat(item.valor) === parseFloat(valorFiltro);
+
+            // Filtra por tipo
+            var filtroTipo = !tipoFiltro || item.operacao === tipoFiltro;
+
+            // Retorna verdadeiro se todos os critérios forem atendidos
+            return filtroData && filtroValor && filtroTipo;
+        });
+
+        return dadosFiltrados;
+    }
+
+    function atualizarTabela(dados) {
+        var tabelaExtrato = document.getElementById('tabelaExtrato');
+        tabelaExtrato.innerHTML = ''; // Limpa o conteúdo atual da tabela
+
+        // Atualiza a tabela com os dados filtrados
+        dados.forEach(function (item) {
+            var newRow = tabelaExtrato.insertRow();
+            var cellData = newRow.insertCell(0);
+            var cellOperacao = newRow.insertCell(1);
+            var cellValor = newRow.insertCell(2);
+
+            cellData.innerHTML = item.data;
+            cellOperacao.innerHTML = item.operacao;
+            cellValor.innerHTML = 'R$ ' + item.valor;
+        });
+    }
+</script>
