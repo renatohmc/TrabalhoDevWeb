@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="bootstrap/bootstrap-icons.css">
         <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-success navbar-dark">
@@ -103,6 +106,18 @@
 
         <!-- Scripts -->
         <script src="bootstrap/bootstrap.bundle.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Adiciona máscara de CPF
+                $('#cpf').mask('000.000.000-00', { reverse: true });
+        
+                // Adiciona máscara de telefone
+                $('#telefone').mask('(00) 00000-0000');
+
+                $(".form-control").attr('required', 'true');
+            });
+        </script>
+        
 
     </body>
 

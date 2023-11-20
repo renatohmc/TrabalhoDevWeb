@@ -86,3 +86,9 @@ footer {
     background-color: #4cae4c; /* Cor verde mais escura */
     color: #fff;
 }
+
+/* Adicione a cor de fundo vermelha para indicar um campo obrigatório não preenchido */
+.input-error {
+    background-color: #ffe6e6; /* Cor de fundo vermelha clara */
+    border: 1px solid #ff0000; /* Borda vermelha */
+}
