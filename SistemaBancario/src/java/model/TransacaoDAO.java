@@ -1,4 +1,4 @@
-package DAO;
+package model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Models.Transacao;
+import entidade.Transacao;
 
-public class TransacaoDAO {
+public class TransacaoDAO implements Dao<Transacao>{
 
     private Connection connection;
 

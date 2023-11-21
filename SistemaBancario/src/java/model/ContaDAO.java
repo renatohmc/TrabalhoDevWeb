@@ -1,11 +1,11 @@
-package DAO;
+package model;
 
 import java.util.List;
 
-import Models.Conta;
-import Models.Transacao;
+import entidade.Conta;
+import entidade.Transacao;
 
-public class ContaDAO {
+public class ContaDAO implements Dao<Conta>{
     // Métodos para operações no banco de dados
     public Conta getContaById(int id) { /* Implementação */ }
     public void depositar(int id, double valor) { /* Implementação */ }
